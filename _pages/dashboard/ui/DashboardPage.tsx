@@ -48,7 +48,7 @@ export const DashboardPage: React.FC = () => {
                     </div>
                     {currentUser.role === 'admin' && (
                         <div className="flex-shrink-0">
-                            <Button variant="primary">Add New Staff</Button>
+                            <Button variant="primary" onClick={() => router.push('/dashboard/add-staff')}>Add New Staff</Button>
                         </div>
                     )}
                 </div>
