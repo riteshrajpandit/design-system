@@ -2,6 +2,7 @@
 
 import React, { Component, ErrorInfo, ReactNode } from 'react';
 import { Button } from '@/shared/ui/Button/Button';
+import { Logger } from '@/shared/lib/logger';
 
 interface Props {
   children?: ReactNode;
@@ -23,7 +24,7 @@ export class ErrorBoundary extends Component<Props, State> {
   }
 
   public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    console.error('Uncaught error:', error, errorInfo);
+    Logger.error('Uncaught error caught by ErrorBoundary:', error, errorInfo);
   }
 
   private handleReload = () => {

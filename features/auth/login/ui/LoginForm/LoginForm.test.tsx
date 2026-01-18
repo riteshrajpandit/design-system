@@ -2,6 +2,23 @@ import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { LoginForm } from './LoginForm';
 
+// Mock useRouter
+jest.mock('next/navigation', () => ({
+  useRouter: jest.fn(() => ({
+    push: jest.fn(),
+  })),
+}));
+
+// Mock useSession
+jest.mock('@/entities/session/model/session.context', () => ({
+    useSession: jest.fn(() => ({
+        login: jest.fn(),
+        logout: jest.fn(),
+        currentUser: null,
+        isLoading: false
+    }))
+}));
+
 describe('LoginForm', () => {
   it('renders login form inputs and button', () => {
     render(<LoginForm />);
