@@ -15,7 +15,7 @@ const config: Config = {
   moduleNameMapper: {
     '^@/app/(.*)$': '<rootDir>/app/$1',
     '^@/processes/(.*)$': '<rootDir>/processes/$1',
-    '^@/pages/(.*)$': '<rootDir>/pages/$1',
+    '^@/pages/(.*)$': '<rootDir>/_pages/$1',
     '^@/widgets/(.*)$': '<rootDir>/widgets/$1',
     '^@/features/(.*)$': '<rootDir>/features/$1',
     '^@/entities/(.*)$': '<rootDir>/entities/$1',
